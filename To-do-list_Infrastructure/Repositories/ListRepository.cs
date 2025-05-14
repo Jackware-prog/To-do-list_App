@@ -38,12 +38,12 @@ namespace To_do_list_Infrastructure.Repositories
 
         public async Task<IEnumerable<List>> GetAllListsAsync()
         {
-            return await _context.Lists.ToListAsync();
+            return await _context.Lists.Include(l => l.items).ToListAsync();
         }
 
         public async Task<List> GetListByIdAsync(int id)
         {
-            return await _context.Lists.FindAsync(id);
+            return await _context.Lists.Include(l => l.items).FirstOrDefaultAsync(l => l.listId == id);
         }
 
         public async Task UpdateListAsync(List list)

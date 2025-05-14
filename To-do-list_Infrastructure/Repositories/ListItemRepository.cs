@@ -51,5 +51,15 @@ namespace To_do_list_Infrastructure.Repositories
             _context.ListItems.Update(item);
             await _context.SaveChangesAsync();
         }
+
+        public async Task UpdateItemStatusAsync(int Id)
+        {
+            var item = await _context.ListItems.FindAsync(Id);
+            if (item != null)
+            {
+                item.isActive = !item.isActive;
+                await _context.SaveChangesAsync();
+            }
+        }
     }
 }

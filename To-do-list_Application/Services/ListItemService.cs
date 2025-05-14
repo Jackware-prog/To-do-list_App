@@ -42,5 +42,10 @@ namespace To_do_list_Application.Services
         {
             await _listItemRepository.UpdateItemAsync(item);
         }
+
+        public async Task UpdateItemStatusAsync(int id)
+        {
+            await _listItemRepository.UpdateItemStatusAsync(id);
+        }
     }
 }

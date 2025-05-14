@@ -17,6 +17,14 @@ namespace To_do_list_Infrastructure.Persistence
             modelBuilder.Entity<List>().ToTable("List");
             modelBuilder.Entity<ListItem>().ToTable("ListItem");
 
+            modelBuilder.Entity<List>(entity =>
+            {
+                // Configure the one-to-many relationship
+                entity.HasMany(l => l.items)
+                      .WithOne()
+                      .HasForeignKey(i => i.listId)
+                      .OnDelete(DeleteBehavior.Cascade);
+            });
 
             base.OnModelCreating(modelBuilder);
         }

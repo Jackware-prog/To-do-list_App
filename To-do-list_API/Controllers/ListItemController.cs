@@ -49,6 +49,14 @@ namespace To_do_list_API.Controllers
             return NoContent();
         }
 
+        //Put: api/ListItem/Check/{id}
+        [HttpPut("Check/{id}")]
+        public async Task<ActionResult> UpdateItem(int id)
+        {
+            await _listItemService.UpdateItemStatusAsync(id);
+            return NoContent();
+        }
+
         //Delete: api/ListItem/{id}
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteItem(int id)

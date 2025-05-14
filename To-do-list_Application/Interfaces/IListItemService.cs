@@ -16,6 +16,8 @@ namespace To_do_list_Application.Interfaces
 
         Task UpdateItemAsync(ListItem item);
 
+        Task UpdateItemStatusAsync(int id);
+
         Task DeleteItemAsync(int id);
     }
 }
