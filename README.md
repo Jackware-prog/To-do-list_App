@@ -2,7 +2,7 @@
 ## Key Features
 
 1. **Clean Architecture Layers**:
-   - `Core`: Domain entities and business rules
+   - `Core`: Domain entities
    - `Infrastructure`: Data access implementations
    - `Application`: Business logic services
    - `API`: Presentation layer
