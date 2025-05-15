@@ -1,13 +1,29 @@
-To-do-list-App/
-├── .github/                     # GitHub configuration files (CI/CD, workflows)
-├── To-do-list_API/              # API project (Web API controllers)
-├── To-do-list_API.Tests/        # Integration tests for API endpoints
-├── To-do-list_Application/      # Application layer (services, DTOs, interfaces)
-├── To-do-list_Application.Tests/# Unit tests for application services
-├── to-do-list_client/           # Frontend client application
-├── To-do-list_Core/             # Core domain models
-├── To-do-list_Infrastructure/   # Infrastructure concerns (persistence, external services)
-├── To-do-list_Infrastructure.Tests/ # Tests for infrastructure components
-├── .gitattributes               # Git configuration
-├── .gitignore                   # Git ignore rules
-└── To-do-list.sln               # Visual Studio solution file
+
+## Key Features
+
+1. **Clean Architecture Layers**:
+   - `Core`: Domain entities and business rules
+   - `Infrastructure`: Data access implementations
+   - `Application`: Business logic services
+   - `API`: Presentation layer
+
+2. **Testing Strategy**:
+   - Unit tests for services (`Application.Tests`)
+   - Integration tests for repositories (`Infrastructure.Tests`)
+   - API contract tests (`API.Tests`)
+
+3. **Frontend/Backend Separation**:
+   - Client code completely isolated in `to-do-list_client`
+   - API serves as backend interface
+
+```mermaid
+graph TD
+    A[Root] --> B[.github]
+    A --> C[To-do-list_API]
+    A --> D[To-do-list_API.Tests]
+    A --> E[To-do-list_Application]
+    A --> F[To-do-list_Application.Tests]
+    A --> G[to-do-list_client]
+    A --> H[To-do-list_Core]
+    A --> I[To-do-list_Infrastructure]
+    A --> J[To-do-list_Infrastructure.Tests]
