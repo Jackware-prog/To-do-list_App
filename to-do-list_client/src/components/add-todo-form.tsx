@@ -78,7 +78,7 @@ export function AddTodoForm({ onAddTodo }: AddTodoFormProps) {
             <>
               <div className="space-y-2">
                 <Textarea
-                  placeholder="Description (optional)"
+                  placeholder="Description"
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   rows={3}
@@ -129,7 +129,7 @@ export function AddTodoForm({ onAddTodo }: AddTodoFormProps) {
           <Button
             type="submit"
             className={cn(isExpanded ? "" : "w-full")}
-            disabled={!title.trim()}
+            disabled={!title.trim() || !description.trim()}
           >
             <Plus className="mr-2 h-4 w-4" /> Add Task
           </Button>

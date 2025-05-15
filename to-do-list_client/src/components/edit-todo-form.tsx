@@ -92,7 +92,7 @@ export function EditTodoForm({ todo, onUpdate, onCancel }: EditTodoFormProps) {
         <Button type="button" variant="outline" onClick={onCancel}>
           Cancel
         </Button>
-        <Button type="submit" disabled={!title.trim()}>
+        <Button type="submit" disabled={!title.trim() || !description.trim()}>
           Save Changes
         </Button>
       </div>
