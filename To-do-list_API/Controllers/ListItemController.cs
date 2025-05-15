@@ -51,7 +51,7 @@ namespace To_do_list_API.Controllers
 
         //Put: api/ListItem/Check/{id}
         [HttpPut("Check/{id}")]
-        public async Task<ActionResult> UpdateItem(int id)
+        public async Task<ActionResult> UpdateItemStatus(int id)
         {
             await _listItemService.UpdateItemStatusAsync(id);
             return NoContent();

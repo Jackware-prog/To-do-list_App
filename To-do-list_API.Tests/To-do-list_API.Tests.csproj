@@ -17,4 +17,11 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\To-do-list_API\To-do-list_API.csproj" />
+    <ProjectReference Include="..\To-do-list_Application\To-do-list_Application.csproj" />
+    <ProjectReference Include="..\To-do-list_Core\To-do-list_Core.csproj" />
+    <ProjectReference Include="..\To-do-list_Infrastructure.Tests\To-do-list_Infrastructure.Tests.csproj" />
+  </ItemGroup>
+
 </Project>
